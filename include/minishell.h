@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:09:35 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/12/13 16:27:18 by alappas          ###   ########.fr       */
+/*   Updated: 2024/01/23 02:44:30 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # include <stdint.h>
 # include <limits.h>
 # include <errno.h>
+# include <stdbool.h>
 # include "../libft/include/libft.h"
 
 typedef enum e_token_type
@@ -259,6 +260,8 @@ void		check_export_null(t_envir *head_export, t_envir **env_list,
 				t_envir **export_list, char **arg);
 int			unset_helper(char *list_arg, int value, t_data *data);
 int			export_helper(char *list_arg, t_data *data);
+
+void		fix_quotes(t_data *data);
 
 int	g_signal;
 

@@ -31,6 +31,7 @@ void	start_loop(t_data *data)
 		if ((odd_quote(data->input_line)) || (special_chars(data->input_line))
 			|| (lexical_analysis(data, data->input_line)))
 			continue ;
+		fix_quotes(data);
 		init_list_data(data);
 		exec_pipes(data);
 	}
