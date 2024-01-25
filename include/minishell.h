@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:09:35 by vkozlova          #+#    #+#             */
-/*   Updated: 2024/01/23 02:44:30 by alappas          ###   ########.fr       */
+/*   Updated: 2024/01/26 00:50:03 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_envir
 {
 	char			*var_name;
 	char			*var_value;
-	int				equal;
 	struct s_envir	*next;
 	struct s_envir	*prev;
 }	t_envir;
