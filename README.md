@@ -58,3 +58,7 @@ foreground pipeline.
 ## COLLABORATORS
 
 Big shoutout to my collaborator Victoria [(click here to access her GitHub)](https://github.com/Vikyssiko/) for a tremendous job she did on this project.
+
+## BONUS PART
+
+There is a unfinished concept of tree-building for the execution of parentheses, added for reference and possible future implementation.
