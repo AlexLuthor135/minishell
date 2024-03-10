@@ -62,3 +62,7 @@ Big shoutout to my collaborator Victoria [(click here to access her GitHub)](htt
 ## BONUS PART
 
 There is a unfinished concept of tree-building for the execution of parentheses, added for reference and possible future implementation.
+
+## COMPATIBILITY
+
+Currently compatible with MacOS only.
