@@ -6,11 +6,13 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:09:36 by vkozlova          #+#    #+#             */
-/*   Updated: 2024/05/15 20:08:19 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:27:24 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/minishell.h"
+
+int	g_signal;
 
 void	handle_signal(void)
 {
