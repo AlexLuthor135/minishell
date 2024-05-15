@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 00:28:31 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/12/06 20:34:00 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:08:32 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s)
 		return ;
-	write(fd, s, ft_strlen(s));
+	if (write(fd, s, ft_strlen(s)) == -1)
+		exit(1);
 }

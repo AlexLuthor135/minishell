@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 14:06:29 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/11/28 01:12:20 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:09:57 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	print_without_quotes(char *str)
 
 	i = 0;
 	closed = 1;
+	quote = 0;
 	while (str[i])
 	{
 		if ((str[i] == '\'' || str[i] == '\"') && closed)

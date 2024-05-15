@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:09:36 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/11/07 00:11:57 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:07:34 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	odd_quote(char *str)
 	}
 	if (double_quotes % 2 != 0 || single_quotes % 2 != 0)
 	{
-		write(2, "We should not handle unclosed quotes\n", 37);
+		if (write(2, "We should not handle unclosed quotes\n", 37) == -1)
+			return (1);
 		return (1);
 	}
 	return (0);

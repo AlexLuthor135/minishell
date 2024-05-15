@@ -6,13 +6,12 @@
 #    By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/08 16:46:30 by alappas           #+#    #+#              #
-#    Updated: 2023/12/12 22:24:01 by alappas          ###   ########.fr        #
+#    Updated: 2024/05/15 20:10:44 by alappas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Variables
-CC					=	gcc
-CFLAGS				=	-Wall -Wextra -Werror -Iinclude -Isrc -O3 -g #-fsanitize=address
+CFLAGS				=	-Wall -Wextra -Iinclude -Isrc -O3 -g #-fsanitize=address
 
 RM					=	rm -rf
 
@@ -30,7 +29,6 @@ LIBFT				=	libft.a
 LIBFT_DIR			=	libft
 LIBFT_FILE			=	$(LIBFT_DIR)/$(LIBFT)
 CFLAGS				+=	-Wall \
-						-Werror \
 						-Wextra \
 						-I $(LIBFT_DIR)/include
 
@@ -50,13 +48,14 @@ all:				$(NAME)
 
 $(OBJ_DIR)/%.o:		%.c $(MINISHELL_INC)
 					@mkdir -p $(dir $@)
-					@$(CC) $(CFLAGS) $(RL_CFLAGS) -c $< -o $@
+					@cc $(CFLAGS) $(RL_CFLAGS) -c $< -o $@
 
 $(LIBFT_FILE):
 					$(MAKE_LIB) $(LIBFT_DIR)
 
-$(NAME):			$(LIBFT_FILE) $(MINISHELL_OBJ)
-					@$(CC) $(CFLAGS) $(LIBFT_FILE) $(MINISHELL_OBJ) $(RL_LIBS) -o $@
+$(NAME):			$(MINISHELL_OBJ)
+					@make -C $(LIBFT_DIR)
+					@cc $(CFLAGS) $(MINISHELL_OBJ) $(LIBFT_FILE) $(RL_LIBS) -o $@
 					@echo "$(GREEN)$(NAME) was successfully created!$(DEFAULT)"
 
 lib_clean:

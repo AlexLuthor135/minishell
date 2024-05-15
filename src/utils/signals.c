@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkozlova <vkozlova@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:09:36 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/11/07 13:58:59 by vkozlova         ###   ########.fr       */
+/*   Updated: 2024/05/15 20:08:19 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	handle_c(int signo)
 		g_signal = SIGCHLD;
 	else if (signo == SIGINT)
 	{
-		write(1, "\n", 1);
+		if (write(1, "\n", 1) == -1)
+			exit(1);
 		wait(NULL);
 		sig = g_signal;
 		g_signal = SIGINT;

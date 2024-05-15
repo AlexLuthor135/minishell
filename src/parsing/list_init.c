@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:24:48 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/11/29 19:57:37 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:08:09 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ t_cmd_list	*create_list(t_data *data, t_token *token)
 	t_cmd_list	*new;
 
 	list = NULL;
+	root = NULL;
 	if (token->type == T_NEWLINE)
 		return (NULL);
 	while (token)

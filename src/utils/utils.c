@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils1.c                                           :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 21:09:36 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/12/03 21:12:09 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:09:08 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,17 @@ void	read_input_delim(char *name, int stdin, int stdout, int fd)
 	char	*str;
 
 	signal(SIGINT, handle_sig_child);
-	write(stdout, "> ", 2);
+	if (write(stdout, "> ", 2) == -1)
+		exit(1);
 	str = get_next_line(stdin);
 	while (str && (ft_strncmp(str, name, ft_strlen(name)) != 0
 			|| ft_strlen(name) != ft_strlen(str) - 1))
 	{
-		write(fd, str, ft_strlen(str));
+		if (write(fd, str, ft_strlen(str)) == -1)
+			exit(1);
 		free(str);
-		write(stdout, "> ", 2);
+		if (write(stdout, "> ", 2) == -1)
+			exit(1);
 		str = get_next_line(stdin);
 	}
 	exit(0);

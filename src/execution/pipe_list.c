@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 19:33:12 by vkozlova          #+#    #+#             */
-/*   Updated: 2023/12/09 20:48:58 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:09:45 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,8 @@ t_pipe_list	*create_pipes(t_cmd_list *list)
 			pipe_list->next = new_pipe;
 			pipe_list = pipe_list->next;
 		}
-		pipe(pipe_list->fd);
+		if (pipe(pipe_list->fd) == -1)
+			exit_shell("Error: pipe failed", errno, NULL);
 		pipe_num--;
 	}
 	return (first_pipe);

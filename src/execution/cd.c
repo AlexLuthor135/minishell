@@ -6,7 +6,7 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:32:18 by alappas           #+#    #+#             */
-/*   Updated: 2023/12/13 16:32:20 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:09:20 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ void	cd_home(t_data *data, t_envir *env_list)
 		env_list->var_value = ft_strdup(find_env_var(data, "PWD"));
 		env_list = head;
 	}
-	chdir(find_env_var(data, "HOME"));
+	if (chdir(find_env_var(data, "HOME")) == -1)
+		no_dir_error(errno, find_env_var(data, "HOME"), data);
 	if (find_env_node(env_list, "PWD"))
 	{
 		env_list = find_env_node(env_list, "PWD");
