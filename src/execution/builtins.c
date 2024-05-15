@@ -6,10 +6,9 @@
 /*   By: alappas <alappas@student.42wolfsburg.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:32:07 by alappas           #+#    #+#             */
-/*   Updated: 2023/12/13 16:32:10 by alappas          ###   ########.fr       */
+/*   Updated: 2024/05/15 20:19:00 by alappas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../../include/minishell.h"
 
